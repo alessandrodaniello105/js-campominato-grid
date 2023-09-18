@@ -67,7 +67,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
+  background-color: rgb(73, 0, 80);
   border: 1px solid black;
   cursor: pointer;
 }
@@ -91,5 +91,5 @@ button {
 
 /* 4. Stilo la classe 'clicked' */
 .square.clicked {
-  background-color: white;
+  background-color: rgb(121, 244, 255);
 }

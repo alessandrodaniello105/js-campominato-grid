@@ -2,6 +2,7 @@
 const container   = document.querySelector('.container');
 const topBar      = document.querySelector('.top-bar');
 let difficulty;
+let started = false;
 
 const diffSelector = document.getElementById('difficulty-selector');
 let scelta = diffSelector.value;
@@ -18,12 +19,19 @@ getStarted();
 
 function init(){
 
-  // 8. Creo il ciclo di generazione dei 100 quadrati
-  for (let i = 1; i <= checkDiff(); i++){
+  if (started == true) {
+    reset();
+  } else {
+    // 8. Creo il ciclo di generazione dei 100 quadrati
+    for (let i = 1; i <= checkDiff(); i++){
 
-    squareGeneration(i, checkDiff());
-  
-  };
+      squareGeneration(i, checkDiff());
+    
+    };
+    started = true;
+  }
+
+
 
 };
 
@@ -86,9 +94,10 @@ console.log(scelta);
 
 // 11. Controllo quale difficoltà è stata selezionata
 function checkDiff() {
-  if (scelta == 0) return 100;
-  if (scelta == 1) return 81;
-  if (scelta == 2) return 49;
+  if (scelta == 1) return 100;
+  if (scelta == 2) return 81;
+  if (scelta == 3) return 49;
+  return false
 };
 
 console.log(checkDiff());
