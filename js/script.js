@@ -1,20 +1,25 @@
 // 5. Definisco la variabile del container
 const container   = document.querySelector('.container');
 const topBar      = document.querySelector('.top-bar');
-let difficulty = 100;
+let difficulty;
 
-let scelta = document.getElementById('difficulty-selector');
+const diffSelector = document.getElementById('difficulty-selector');
+let scelta = diffSelector.value;
+
 
 reset();
 
 getStarted();
 
+
 function init(){
   // 8. Creo il ciclo di generazione dei 100 quadrati
 
-  for (let i = 1; i <= difficulty; i++){
 
-    squareGeneration(i, difficulty);
+
+  for (let i = 1; i <= checkDiff(); i++){
+
+    squareGeneration(i, checkDiff());
   
   };
 };
@@ -69,4 +74,14 @@ function getStarted(){
     init();
   });
   
-}
+};
+
+console.log(scelta);
+
+function checkDiff() {
+  if (scelta == 0) return 100;
+  if (scelta == 1) return 81;
+  if (scelta == 2) return 49;
+};
+
+console.log(checkDiff());

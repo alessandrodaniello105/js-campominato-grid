@@ -11,3 +11,4 @@ Griglia Campo Minato
 1. Creo il ciclo di generazione dei 100 quadrati
 1. Creo la funzione di generazione griglia e ci inserisco dentro la nostra generazione quadrati
 1. Creo la funzione di generazione del bottone di start, che al click si auto-cancella e invoca la funzione di generazione griglia
+1. Controllo quale difficoltà è stata selezionata
