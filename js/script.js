@@ -6,16 +6,16 @@ const container = document.querySelector('.container');
 
 reset();
 
-let square;
-
 // 8. Creo il ciclo di generazione dei 100 quadrati
 for (let i = 1; i <= 100; i++){
-  square = [i];
 
   generateSquare(i);
+  
 
 
 };
+
+
 
 
 // 6. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
@@ -23,9 +23,14 @@ for (let i = 1; i <= 100; i++){
 function generateSquare(index){
   let newSquare = document.createElement('div');
   newSquare.className = 'square';
+  newSquare.innerHTML = `<span>${index}</span>`
   newSquare._squareID = index;
+  newSquare.addEventListener('click', function(){
+    newSquare.classList.toggle('clicked');
+  });
+
   container.append(newSquare);
-}
+};
 
 
 

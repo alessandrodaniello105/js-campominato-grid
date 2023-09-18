@@ -6,7 +6,13 @@
 
 body {
   background-color: thistle;
+  font-family: fantasy;
 }
+
+.hide {
+  display: none;
+}
+
 
 .main-wrapper {
   height: 100vh;
@@ -14,6 +20,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 
 /* 1. Creo un container dove inserisco i miei quadrati e lo stilo */
 .container {
@@ -27,13 +34,17 @@ body {
 
 
 .square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: calc(600px / 10);
   /* height: calc(600px / 10); */
   aspect-ratio: 1 / 1;
-  border: 1px solid black;
   background-color: aquamarine;
+  border: 1px solid black;
   cursor: pointer;
 }
+
 
 
 /* 4. Stilo la classe 'clicked' */
