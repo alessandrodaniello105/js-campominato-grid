@@ -23,10 +23,10 @@ for (let i = 1; i <= 100; i++){
 function generateSquare(index){
   let newSquare = document.createElement('div');
   newSquare.className = 'square';
-  newSquare.innerHTML = `<span>${index}</span>`
   newSquare._squareID = index;
   newSquare.addEventListener('click', function(){
     newSquare.classList.toggle('clicked');
+    console.log(this._squareID);
   });
 
   container.append(newSquare);
