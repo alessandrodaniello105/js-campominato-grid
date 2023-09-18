@@ -7,7 +7,7 @@ Griglia Campo Minato
 1. Stilo la classe 'clicked'
 1. Definisco la variabile del container
 1. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
-1. Creo il ciclo di generazione dei 100 quadrati
 1. Creo la funzione di reset del container e la invoco
+1. Creo il ciclo di generazione dei 100 quadrati
 1. Creo la funzione di generazione griglia e ci inserisco dentro la nostra generazione quadrati
-1. Creo la funzione di generazione del bottone di start, che si auto-cancella e poi fa partire la funzione di generazione griglia
+1. Creo la funzione di generazione del bottone di start, che al click si auto-cancella e invoca la funzione di generazione griglia

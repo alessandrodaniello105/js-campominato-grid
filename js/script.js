@@ -3,11 +3,9 @@ const container = document.querySelector('.container');
 
 
 
-
 reset();
 
-init();
-
+getStarted();
 
 
 
@@ -15,7 +13,7 @@ function init(){
   // 8. Creo il ciclo di generazione dei 100 quadrati
   for (let i = 1; i <= 100; i++){
 
-    generateSquare(i);
+    squareGeneration(i);
   
   };
 };
@@ -24,7 +22,7 @@ function init(){
 
 // 6. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
 
-function generateSquare(index){
+function squareGeneration(index){
   let newSquare = document.createElement('div');
   newSquare.className = 'square';
   newSquare._squareID = index;
@@ -42,3 +40,18 @@ function generateSquare(index){
 function reset(){
   container.innerHTML = '';
 };
+
+
+// 9. Creo la funzione di generazione griglia e ci inserisco dentro la nostra generazione quadrati
+
+// 10. Creo la funzione di generazione del bottone di start, che al click si auto-cancella e invoca la funzione di generazione griglia
+function getStarted(){
+  const buttonStart = document.createElement('button');
+  buttonStart.innerHTML = 'START';
+  container.append(buttonStart);
+  buttonStart.addEventListener('click', function(){
+    container.innerHTML = '';
+    init();
+  });
+  
+}
