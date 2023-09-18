@@ -6,15 +6,19 @@ const container = document.querySelector('.container');
 
 reset();
 
-// 8. Creo il ciclo di generazione dei 100 quadrati
-for (let i = 1; i <= 100; i++){
+init();
 
-  generateSquare(i);
+
+
+
+function init(){
+  // 8. Creo il ciclo di generazione dei 100 quadrati
+  for (let i = 1; i <= 100; i++){
+
+    generateSquare(i);
   
-
-
+  };
 };
-
 
 
 
