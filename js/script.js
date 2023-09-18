@@ -1,19 +1,20 @@
 // 5. Definisco la variabile del container
-const container = document.querySelector('.container');
+const container   = document.querySelector('.container');
+const topBar      = document.querySelector('.top-bar');
+let difficulty = 100;
 
-
+let scelta = document.getElementById('difficulty-selector');
 
 reset();
 
 getStarted();
 
-
-
 function init(){
   // 8. Creo il ciclo di generazione dei 100 quadrati
-  for (let i = 1; i <= 100; i++){
 
-    squareGeneration(i);
+  for (let i = 1; i <= difficulty; i++){
+
+    squareGeneration(i, difficulty);
   
   };
 };
@@ -22,13 +23,27 @@ function init(){
 
 // 6. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
 
-function squareGeneration(index){
+function squareGeneration(index, dif){
   let newSquare = document.createElement('div');
   newSquare.className = 'square';
+
+  if (dif == 100) {
+
+    newSquare.classList.add('square-100');
+
+  } else if (dif == 81) {
+    
+    newSquare.classList.add('square-81');
+
+  } else if (dif == 49) {
+    
+    newSquare.classList.add('square-49');
+
+  }
+
   newSquare._squareID = index;
   newSquare.addEventListener('click', function(){
     newSquare.classList.toggle('clicked');
-    console.log(this._squareID);
   });
 
   container.append(newSquare);
@@ -48,7 +63,7 @@ function reset(){
 function getStarted(){
   const buttonStart = document.createElement('button');
   buttonStart.innerHTML = 'START';
-  container.append(buttonStart);
+  topBar.append(buttonStart);
   buttonStart.addEventListener('click', function(){
     container.innerHTML = '';
     init();
