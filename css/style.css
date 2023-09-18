@@ -7,3 +7,31 @@
 body {
   background-color: thistle;
 }
+
+.main-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 1. Creo un container dove inserisco i miei quadrati e lo stilo */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+
+/* 3. Creo lo stile/la classe del quadrato in css, inizialmente per una griglia 10 * 10 */
+
+.square {
+  width: calc(600px / 9);
+  height: calc(600px / 9);
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+}
+
+
+/* 1. */
+/* 1. */
