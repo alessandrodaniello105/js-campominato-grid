@@ -6,6 +6,10 @@ let difficulty;
 const diffSelector = document.getElementById('difficulty-selector');
 let scelta = diffSelector.value;
 
+const buttonStart = document.createElement('button');
+buttonStart.innerHTML = 'START';
+topBar.append(buttonStart);
+
 
 reset();
 
@@ -13,15 +17,14 @@ getStarted();
 
 
 function init(){
+
   // 8. Creo il ciclo di generazione dei 100 quadrati
-
-
-
   for (let i = 1; i <= checkDiff(); i++){
 
     squareGeneration(i, checkDiff());
   
   };
+
 };
 
 
@@ -29,7 +32,9 @@ function init(){
 // 6. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
 
 function squareGeneration(index, dif){
+
   let newSquare = document.createElement('div');
+
   newSquare.className = 'square';
 
   if (dif == 100) {
@@ -47,11 +52,14 @@ function squareGeneration(index, dif){
   }
 
   newSquare._squareID = index;
+
   newSquare.addEventListener('click', function(){
     newSquare.classList.toggle('clicked');
+    console.log(this._squareID);
   });
 
   container.append(newSquare);
+
 };
 
 
@@ -66,11 +74,9 @@ function reset(){
 
 // 10. Creo la funzione di generazione del bottone di start, che al click si auto-cancella e invoca la funzione di generazione griglia
 function getStarted(){
-  const buttonStart = document.createElement('button');
-  buttonStart.innerHTML = 'START';
-  topBar.append(buttonStart);
+
   buttonStart.addEventListener('click', function(){
-    container.innerHTML = '';
+    reset();
     init();
   });
   
@@ -78,6 +84,7 @@ function getStarted(){
 
 console.log(scelta);
 
+// 11. Controllo quale difficoltà è stata selezionata
 function checkDiff() {
   if (scelta == 0) return 100;
   if (scelta == 1) return 81;
