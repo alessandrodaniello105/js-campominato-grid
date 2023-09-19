@@ -40,25 +40,28 @@ function squareGeneration(index, dif){
 
   newSquare.className = 'square';
 
-  if (dif == 100) {
+  // if (dif == 100) {
 
-    newSquare.classList.add('square-100');
+  //   newSquare.classList.add('square-100');
 
-  } else if (dif == 81) {
+  // } else if (dif == 81) {
     
-    newSquare.classList.add('square-81');
+  //   newSquare.classList.add('square-81');
 
-  } else if (dif == 49) {
+  // } else if (dif == 49) {
     
-    newSquare.classList.add('square-49');
+  //   newSquare.classList.add('square-49');
 
-  }
+  // }
+
+  newSquare.classList.add('square' + '-' + choiceDifficulty(diffSelector.value));
 
   newSquare._squareID = index;
 
   newSquare.addEventListener('click', function(){
-    newSquare.classList.toggle('clicked');
+    newSquare.classList.add('clicked');
     console.log(this._squareID);
+    console.log(newSquare);
   });
 
   container.append(newSquare);
