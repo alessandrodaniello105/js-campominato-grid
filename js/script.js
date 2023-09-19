@@ -62,7 +62,7 @@ function squareGeneration(index){
     newSquare.classList.add('clicked');
     newSquare.removeEventListener('click', handleSquareClick);
     counter++;
-    console.log('PUNTEGGIO---', counter);
+    console.log('PUNTEGGIO---', counter, this._squareID);
   };
   
   
@@ -76,6 +76,7 @@ function squareGeneration(index){
 // 7. Creo la funzione di reset del container e la invoco
 function reset(){
   container.innerHTML = '';
+  bombs.splice(0, bombs.length);
 };
 
 
@@ -92,6 +93,7 @@ function getStarted(){
     reset();
     
     init(squaresNumber);
+    generateBombs(squaresNumber);
   
   });
   
@@ -110,20 +112,35 @@ function choiceDifficulty(value) {
 };
 
 
-
 // 15. Creo una funzione di generazione random di 16 numeri con range min(1)-max(numero quadrati) e con verifica di univocità
 
-// function generateBombs(maxSquares){
-//   for (let i = 1; i <= 16; i++){
-    
-//     let bomb = Math.ceil(Math.random() * maxSquares);
-    
-//     if (bombs.includes(bomb)) {
-//       generateBombs(maxSquares);
-//     } else {
-//       bombs.push(bomb);
-//     }
+console.log(bombs);
+function generateBombs(maxSquares){
+  
+  let targetBomb = 16
 
-//   }
-//   console.log(bombs);
-// };
+  for (let c = 0; c < targetBomb ; c++){
+  
+    
+
+    let bomb = Math.ceil(Math.random() * maxSquares);
+    
+    console.log('numero estratto--', bomb);
+
+    if (bombs.includes(bomb)) {
+      console.log('E\' STATO GIA\' ESTRATTO');
+      c--
+      bomb = Math.ceil(Math.random() * maxSquares);
+  
+    } else {
+      bombs.push(bomb);
+    }
+
+  }
+
+  console.log(bombs);
+};
+
+function randomizer(max){
+  return Math.ceil(Math.random() * max);
+};
