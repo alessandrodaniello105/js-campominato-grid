@@ -1,12 +1,14 @@
 // 5. Definisco la variabile del container
 const container   = document.querySelector('.container');
 const topBar      = document.querySelector('.top-bar');
-let difficulty;
+const diffSelector = document.getElementById('difficulty-selector');
 let started = false;
 
-const diffSelector = document.getElementById('difficulty-selector');
 
+// 12. Creo un counter per il punteggio
+let counter = 0;
 
+// START BUTTON
 const buttonStart = document.createElement('button');
 buttonStart.innerHTML = 'START';
 topBar.append(buttonStart);
@@ -44,6 +46,8 @@ function squareGeneration(index){
 
   newSquare._squareID = index;
 
+
+  // 13. Al click del quadrato rimuovo la funzione click dal quadrato cliccato. Poi '++' counter.
   newSquare.addEventListener('click', function(){
     newSquare.classList.add('clicked');
     console.log(this._squareID);
