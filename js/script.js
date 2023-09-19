@@ -35,7 +35,7 @@ function init(num){
 
 
 // 6. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
-
+console.log('INIZIO---', counter);
 function squareGeneration(index){
 
   let newSquare = document.createElement('div');
@@ -48,16 +48,21 @@ function squareGeneration(index){
 
 
   // 13. Al click del quadrato rimuovo la funzione click dal quadrato cliccato. Poi '++' counter.
-  newSquare.addEventListener('click', function(){
+  newSquare.addEventListener('click', handleSquareClick);
+  
+  function handleSquareClick(){
     newSquare.classList.add('clicked');
-    console.log(this._squareID);
-    console.log(newSquare);
-  });
-
+    newSquare.removeEventListener('click', handleSquareClick);
+    counter++;
+    console.log('PUNTEGGIO---', counter);
+  };
+  
+  
+  
+  
   container.append(newSquare);
-
+  return newSquare;
 };
-
 
 
 // 7. Creo la funzione di reset del container e la invoco
