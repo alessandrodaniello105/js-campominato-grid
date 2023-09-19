@@ -7,11 +7,11 @@ let started = false;
 const diffSelector = document.getElementById('difficulty-selector');
 
 
-// const buttonStart = document.createElement('button');
-// buttonStart.innerHTML = 'START';
-// topBar.append(buttonStart);
+const buttonStart = document.createElement('button');
+buttonStart.innerHTML = 'START';
+topBar.append(buttonStart);
 
-const buttonStart = document.getElementById('button');
+// const buttonStart = document.getElementById('button');
 
 
 reset();
