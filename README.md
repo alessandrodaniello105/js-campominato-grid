@@ -14,6 +14,8 @@ Griglia Campo Minato
 1. Controllo quale difficoltà è stata selezionata
 
 ## Bombe, vittoria e fine gioco
+1. Creo un counter per il punteggio
+1. Al click del quadrato rimuovo la funzione click dal quadrato cliccato e '++' counter.
 1. Creo una lista globale vuota che conterrà le mie bombe
 1. Creo una funzione di generazione random di 16 numeri con range min(0)-max(numero quadrati - 1) e con verifica di univocità
 1. Creo in css una classe bomba
