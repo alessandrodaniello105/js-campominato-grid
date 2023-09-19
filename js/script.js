@@ -4,16 +4,24 @@ const topBar      = document.querySelector('.top-bar');
 const diffSelector = document.getElementById('difficulty-selector');
 let started = false;
 
-
-// 12. Creo un counter per il punteggio
-let counter = 0;
-
 // START BUTTON
 const buttonStart = document.createElement('button');
 buttonStart.innerHTML = 'START';
 topBar.append(buttonStart);
 
 // const buttonStart = document.getElementById('button');
+
+
+
+
+// 12. Creo un counter per il punteggio
+let counter = 0;
+
+// 14. Creo una lista globale vuota che conterrà le mie bombe
+const bombs = [];
+
+
+
 
 
 reset();
@@ -82,7 +90,7 @@ function getStarted(){
     console.log(diffSelector.value);
     reset();
     init(choiceDifficulty(diffSelector.value));
-    
+    generateBombs(choiceDifficulty(diffSelector.value));
   });
   
 };
@@ -95,3 +103,22 @@ function choiceDifficulty(value) {
   if (value == 3) return 49;
   return false
 };
+
+
+
+// 15. Creo una funzione di generazione random di 16 numeri con range min(1)-max(numero quadrati) e con verifica di univocità
+
+// function generateBombs(maxSquares){
+//   for (let i = 1; i <= 16; i++){
+    
+//     let bomb = Math.ceil(Math.random() * maxSquares);
+    
+//     if (bombs.includes(bomb)) {
+//       generateBombs(maxSquares);
+//     } else {
+//       bombs.push(bomb);
+//     }
+
+//   }
+//   console.log(bombs);
+// };
