@@ -11,6 +11,7 @@ topBar.append(buttonStart);
 
 // const buttonStart = document.getElementById('button');
 
+let squaresNumber; 
 
 
 
@@ -27,7 +28,6 @@ const bombs = [];
 reset();
 
 getStarted();
-
 
 
 function init(num){
@@ -50,7 +50,7 @@ function squareGeneration(index){
 
   newSquare.className = 'square';
 
-  newSquare.classList.add('square' + '-' + choiceDifficulty(diffSelector.value));
+  newSquare.classList.add('square' + '-' + squaresNumber);
 
   newSquare._squareID = index;
 
@@ -87,10 +87,12 @@ function reset(){
 function getStarted(){
 
   buttonStart.addEventListener('click', function(){
-    console.log(diffSelector.value);
+    squaresNumber = choiceDifficulty(diffSelector.value);
+
     reset();
-    init(choiceDifficulty(diffSelector.value));
-    generateBombs(choiceDifficulty(diffSelector.value));
+    
+    init(squaresNumber);
+  
   });
   
 };
@@ -98,10 +100,13 @@ function getStarted(){
 
 // 11. Controllo quale difficoltà è stata selezionata
 function choiceDifficulty(value) {
+
   if (value == 1) return 100;
   if (value == 2) return 81;
   if (value == 3) return 49;
+
   return false
+  
 };
 
 
