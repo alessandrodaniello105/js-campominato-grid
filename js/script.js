@@ -25,7 +25,7 @@ function init(num){
   // 8. Creo il ciclo di generazione dei 100 quadrati
   for (let i = 1; i <= num; i++){
 
-    squareGeneration(i, num);
+    squareGeneration(i);
   
   };
 
@@ -34,25 +34,11 @@ function init(num){
 
 // 6. Definisco la funzione di generazione del quadrato, dando un custom ID basato sull'index del ciclo 
 
-function squareGeneration(index, dif){
+function squareGeneration(index){
 
   let newSquare = document.createElement('div');
 
   newSquare.className = 'square';
-
-  // if (dif == 100) {
-
-  //   newSquare.classList.add('square-100');
-
-  // } else if (dif == 81) {
-    
-  //   newSquare.classList.add('square-81');
-
-  // } else if (dif == 49) {
-    
-  //   newSquare.classList.add('square-49');
-
-  // }
 
   newSquare.classList.add('square' + '-' + choiceDifficulty(diffSelector.value));
 
